@@ -1,0 +1,15 @@
+1.撤销commit中单个文件的修改
+解决过程
+
+首先查询这个文件的log
+$ git log <fileName>
+
+其次查找到这个文件的上次commit id xxx，并对其进行reset操作
+$ git reset <commit-id> <fileName>
+
+再撤销对此文件的修改
+$ git checkout <fileName>
+
+最后amend一下，再push上去
+$ git commit --amend
+$ git push origin <remoteBranch>
